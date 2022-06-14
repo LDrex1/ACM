@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+  list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+li {
+  text-decoration: none;
+  text-decoration-style: none;
+}
+
+img {
+  width: 30vw;
+}
+
+header > #check,
+header > .hamburger {
+  display: none;
+}
+
+header > nav > ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  column-gap: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+section.slides {
+  display: flex;
+  justify-content: space-around;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 598px) {
+  .header-background > .hamburger {
+    display: flex;
+    color: #218d9c;
+    z-index: 2;
   }
-  to {
-    transform: rotate(360deg);
+
+  .header-background > nav {
+    background: #2637c9;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    transform: translate(-100%, -100%);
+    transition: transform cubic-bezier(0, 0.27, 0.92, 0.65) 500ms;
+  }
+
+  .header-background > nav > ul {
+    margin-top: 20px;
+    height: 200px;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+  }
+
+  .header-background > #check:checked ~ nav {
+    transform: translate(0%, 0%);
   }
 }
